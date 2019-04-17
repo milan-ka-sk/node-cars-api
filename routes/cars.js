@@ -38,4 +38,17 @@ router.post('/', function(req, res) {
 
 });
 
+//
+// get car (by ID)
+//
+
+router.get('/:id', function(req, res) {
+    var id = req.params.id;
+
+    Car.findOne({ _id: id }, function(err, car) {
+        if (err) console.log(err);
+        res.json(car);
+    })
+});
+
 module.exports = router;
