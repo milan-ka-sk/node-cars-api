@@ -15,4 +15,27 @@ router.get('/', function(req, res) {
     })
 });
 
+//
+// post car
+//
+
+router.post('/', function(req, res) {
+
+    console.log("post car");
+    console.log(req.body);
+
+    var car = new Car(req.body);
+    // var car = new Car({
+
+    // });
+
+    car.save(function(err) {
+        if (err) {
+            console.log(err);
+        }
+        res.json("ok");
+    });
+
+});
+
 module.exports = router;
