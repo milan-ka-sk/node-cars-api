@@ -51,4 +51,55 @@ router.get('/:id', function(req, res) {
     })
 });
 
+//
+// edit (update) car
+//
+
+//router.put('/:id', function(req, res) {
+// router.post('/:id', function(req, res) {
+
+//     var id = req.params.id;
+
+//     console.log("put car");
+//     console.log(id);
+//     console.log(req.body);
+
+// Car.findById(id, function(err, car) {
+//     if (err) console.log(err);
+
+//     page.title = title;
+//     page.slug = slug;
+//     page.content = content;
+
+//     page.save(function(err) {
+//         if (err) {
+//             console.log(err);
+//             res.json("problem");
+//         } else {
+//             res.json("ok");
+//         }
+//     });
+
+// });
+
+//
+// get delete car
+//
+
+router.delete('/:id', function(req, res) {
+    var id = req.params.id;
+    //res.send({ type: "delete" });
+    //res.send({ carId: id });
+    //console.log('DELETE: ' + id);
+
+    Car.findByIdAndRemove(id, function(err) {
+        if (err) {
+            console.log(err);
+            res.json("error");
+        } else {
+            res.json("ok");
+        }
+    })
+});
+
 module.exports = router;
