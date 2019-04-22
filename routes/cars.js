@@ -55,7 +55,38 @@ router.get('/:id', function(req, res) {
 // edit (update) car
 //
 
-//router.put('/:id', function(req, res) {
+
+
+router.put('/:id', function(req, res) {
+    var id = req.params.id;
+    var newCar = req.body;
+    console.log("PUT");
+    console.log(id);
+    console.log(req.body);
+    // res.send({ type: "PUT" });
+    // res.json("put ok");
+
+    Car.findById(id, function(err, car) {
+        if (err) console.log(err);
+
+        car.brand = newCar.brand;
+        car.model = newCar.model;
+        car.year = newCar.year;
+        car.price = newCar.price;
+        car.km = newCar.km;
+        car.engine = newCar.engine;
+
+        car.save(function(err) {
+            if (err) {
+                console.log(err);
+                res.json("problem");
+            } else {
+                res.json("put ok");
+            }
+        });
+
+    });
+});
 // router.post('/:id', function(req, res) {
 
 //     var id = req.params.id;
@@ -80,17 +111,15 @@ router.get('/:id', function(req, res) {
 //         }
 //     });
 
-// });
+
 
 //
-// get delete car
+//  delete car
 //
 
 router.delete('/:id', function(req, res) {
     var id = req.params.id;
-    //res.send({ type: "delete" });
-    //res.send({ carId: id });
-    //console.log('DELETE: ' + id);
+    console.log('DELETE: ' + id);
 
     Car.findByIdAndRemove(id, function(err) {
         if (err) {
