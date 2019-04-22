@@ -1,7 +1,20 @@
-npm init
+# this Cars RESTful API has this endpoints:
+# =========================================
 
-npm install --save express mongoose body-parser
+# GET: <url>/cars
+returns all cars
 
-nodemon app.js
+# GET: <url>/cars/<id>
+returns a car with the defined ID
 
-npm install method-override --save
+# POST: <url>/cars
+adds one car 
+
+# PUT: <url>/cars/<id>
+updates a car with the defined ID
+
+# DELETE: <url>/cars/<id>
+deletes a car with the defined ID
+
+
+
