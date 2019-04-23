@@ -25,9 +25,6 @@ router.post('/', function(req, res) {
     console.log(req.body);
 
     var car = new Car(req.body);
-    // var car = new Car({
-
-    // });
 
     car.save(function(err) {
         if (err) {
@@ -58,11 +55,6 @@ router.get('/:id', function(req, res) {
 router.put('/:id', function(req, res) {
     var id = req.params.id;
     var newCar = req.body;
-    console.log("PUT");
-    console.log(id);
-    console.log(req.body);
-    // res.send({ type: "PUT" });
-    // res.json("put ok");
 
     Car.findById(id, function(err, car) {
         if (err) console.log(err);
