@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cars API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+        }
+        
+        li {
+            margin: 0 0 15px;
+            list-style: none;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            text-transform: uppercase;
+            font-weight: normal;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        h1 {
+            font-size: 40px;
+        }
+        
+        h2 {
+            font-size: 16px;
+            margin-bottom: 40px;
+            text-decoration: underline;
+        }
+        
+        h3 {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cars API</h1>
+        <h2>RESTfull Endpoints:</h2>
+        <ul>
+            <li>
+                <h3>Get all cars:</h3>
+                GET: https://mk-cars-api.herokuapp.com/cars
+            </li>
+            <li>
+                <h3>Get a car with a particular ID:</h3>
+                GET: https://mk-cars-api.herokuapp.com/cars/&lt;id&gt;
+            </li>
+            <li>
+                <h3>Add a car:</h3>
+                POST: https://mk-cars-api.herokuapp.com/cars;
+            </li>
+            <li>
+                <h3>Update a car:</h3>
+                PUT: https://mk-cars-api.herokuapp.com/cars/&lt;id&gt;
+            </li>
+            <li>
+                <h3>Delete a car with a particular ID:</h3>
+                DELETE: https://mk-cars-api.herokuapp.com/cars/&lt;id&gt;
+
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -53,7 +53,8 @@ var cars = require('./routes/login');
 app.use('/login', cars);
 
 app.get('/', function(req, res) {
-    res.send('hello world')
+    //res.send('hello world')
+    res.sendFile(path.join(__dirname + '/index.html'));
 })
 
 // start the server
